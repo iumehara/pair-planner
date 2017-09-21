@@ -8,7 +8,10 @@ module.exports = {
         path: __dirname + '/dist',
         filename: 'index_bundle.js'
     },
-    plugins: [new HtmlWebpackPlugin({template: './src/index.html'})],
+    plugins: [
+      new HtmlWebpackPlugin({template: './src/index.html'}),
+      new webpack.EnvironmentPlugin(['MYJSON_BUCKET_ID',])
+    ],
     module: {
         loaders: [
             {

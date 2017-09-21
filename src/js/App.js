@@ -1,5 +1,5 @@
 import React from 'react'
-import { get, set } from './localStorageRepo'
+import { get, set } from './myJsonRepo'
 import Table from './Table'
 import Form from './Form'
 

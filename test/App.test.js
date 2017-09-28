@@ -1,21 +1,21 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 import App from '../src/js/App'
-import * as localStorageRepo from '../src/js/localStorageRepo'
+import * as repo from '../src/js/myJsonRepo'
 
 describe('App', () => {
   describe('Rendered Components', () => {
     let app
     beforeEach(() => {
-      const getSpy = jest.spyOn(localStorageRepo, 'get')
+      const getSpy = jest.spyOn(repo, 'get')
       getSpy.mockReturnValue({then: callback => callback({left: ['aa'], right: ['bb']})})
       app = shallow(<App/>)
     })
     it('renders Table with props', () => {
       const table = app.find('Table')
       expect(table.length).toBe(1)
-      expect(table.props().rows).toEqual({left: ['aa'], right: ['bb']})
       expect(table.props().setParentState).toEqual(app.instance().setStateFromChild)
+      expect(table.props().rows).toEqual({left: ['aa'], right: ['bb']})
     })
 
     it('renders Form with props', () => {
@@ -57,7 +57,7 @@ describe('App', () => {
   describe('handleUpdateClick', () => {
     it('calls set function', () => {
       jest.spyOn(App.prototype, 'componentWillMount')
-      const setSpy = jest.spyOn(localStorageRepo, 'set')
+      const setSpy = jest.spyOn(repo, 'set')
       setSpy.mockReturnValue({then: callback => callback({})})
       const app = shallow(<App/>)
       app.setState({left: ['aa'], right: ['zz']})

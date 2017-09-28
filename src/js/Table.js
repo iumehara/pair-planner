@@ -36,7 +36,7 @@ export default class Table extends React.Component {
       return (
         <td key={i} className={`track-${i+1}`}>
           <button className='shuffle' onClick={this.shufflePairWasClicked} value={i+1}>
-            shuffle
+            ↕︎shuffle
           </button>
         </td>
       )
@@ -47,18 +47,18 @@ export default class Table extends React.Component {
         <thead>
           <tr>
             <th></th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
+            <th>Track 1</th>
+            <th>Track 2</th>
+            <th>Track 3</th>
           </tr>
         </thead>
         <tbody>
           <tr className='left'>
-            <td><button className='rotate' onClick={this.rotateLeftWasClicked}>left</button></td>
+            <td><button className='rotate' onClick={this.rotateLeftWasClicked}>← left</button></td>
             {this.props.rows.left.map((dev, i) => <td key={i}>{dev}</td>)}
           </tr>
           <tr className='right'>
-            <td><button className='rotate' onClick={this.rotateRightWasClicked}>right</button></td>
+            <td><button className='rotate' onClick={this.rotateRightWasClicked}>→ right</button></td>
             {this.props.rows.right.map((dev, i) => <td key={i}>{dev}</td>)}
           </tr>
           <tr>

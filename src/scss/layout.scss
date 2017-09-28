@@ -1,0 +1,43 @@
+.pair-planner {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: 60px;
+  height: 30px;
+  border-radius: 12px;
+  background-color: light-gray;
+  border: 1px solid gray;
+  font-weight: bold;
+
+  &.action {
+    width: 100px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+  }
+
+  &.edit {
+    width: 100px;
+    height: 40px;
+  }
+
+  &.cancel {
+    width: 100px;
+    height: 40px;
+    background-color: red;
+    color: white;
+  }
+}
+
+
+
+table {
+  margin: 100px 0;
+  td {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+}

@@ -53,11 +53,13 @@ export default class App extends React.Component {
     return (
       <div>
         <h1>Pair Planner</h1>
-        <button className={this.buttonValue()} onClick={this.toggleEditMode}>
+        <button className={`${this.buttonValue()} control`} onClick={this.toggleEditMode}>
           {this.buttonValue()}
         </button>
         {this.renderTable()}
-        <button className='update' onClick={this.handleUpdateClick}>update</button>
+        <button className='update action' onClick={this.handleUpdateClick}>
+          update
+        </button>
       </div>)
   }
 }
